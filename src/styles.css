@@ -3623,3 +3623,15 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+
+
+
+
+/*
+  Color del Loading
+*/
+svg path,
+svg rect{
+  fill: black;
+}

@@ -10,19 +10,40 @@ export class InfoPageService {
   info: InfoPage = {};
   loaded = false;
 
+  team: any[] = [];
+
   constructor( private http: HttpClient ) {
 
     //console.log("servicio cargado");
-  
-    this.http.get('assets/data/data-page.json')
-      .subscribe( (response :InfoPage) => {
-
-        console.log(response);
-        console.log(response['instagram']);
-
-        this.loaded = true;
-        this.info = response      
-        
-      });
+    this.loadInfo();
+    this.loadTeam();
+    
   }
+
+  private loadInfo(){
+    this.http.get('assets/data/data-page.json')
+    .subscribe( (response :InfoPage) => {
+
+      console.log(response);
+      console.log(response['instagram']);
+
+      this.loaded = true;
+      this.info = response      
+      
+    });
+  }
+
+  private loadTeam() {
+    this.http.get('https://angular-test-f06e8.firebaseio.com/team.json')
+    .subscribe( (response) => {
+
+      console.log('response team', response);
+
+      this.loaded = true;
+      this.team = response;
+
+    });
+  }
+
+
 }

@@ -17,7 +17,7 @@ export class InfoPageService {
     //console.log("servicio cargado");
     this.loadInfo();
     this.loadTeam();
-    
+
   }
 
   private loadInfo(){
@@ -28,14 +28,14 @@ export class InfoPageService {
       console.log(response['instagram']);
 
       this.loaded = true;
-      this.info = response      
-      
+      this.info = response;
+
     });
   }
 
   private loadTeam() {
     this.http.get('https://angular-test-f06e8.firebaseio.com/team.json')
-    .subscribe( (response) => {
+    .subscribe( (response: any) => {
 
       console.log('response team', response);
 

@@ -3,7 +3,7 @@
 
              
 
-          <div align="center" *ngIf="productServices.loading">
+          <div align="center" *ngIf="productsServices.loading">
             <h2>Loading</h2>
           <div class="loader loader--style1" title="0" >
               <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -26,8 +26,8 @@
           </div>
 
         <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a *ngFor="let product of productServices.products" 
-          routerLink="/item" class="animated fadeIn rk-item ae-masonry__item">
+        <a *ngFor="let product of productsServices.products" 
+          [routerLink]="['/item', product.cod ]" class="animated fadeIn rk-item ae-masonry__item">
         <img src="assets/productos/{{product.url}}" alt="">
             <div class="item-meta">
               <h2>{{product.titulo }}</h2>

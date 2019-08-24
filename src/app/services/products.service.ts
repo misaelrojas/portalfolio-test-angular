@@ -21,12 +21,14 @@ export class ProductsService {
 private loadProducts() {
 
   return new Promise( (resolve, reject) => {
-    this.http.get('https://angular-test-f06e8.firebaseio.com/products_idx.json')
+    this.http.get('https://watashi.firebaseio.com/productos_idx.json')
     .subscribe( (resp: Product[]) => {
 
-      this.products=resp;
+      this.products = resp;
       this.loading = false;
       resolve();
+
+      console.log(this.products)
 
       //setTimeout(()=> {
   //      this.products=resp;
@@ -41,7 +43,7 @@ private loadProducts() {
   }
 
   getProduct( id: string) {
-    return this.http.get(`https://angular-test-f06e8.firebaseio.com/products/${id}.json`);
+    return this.http.get(`https://watashi.firebaseio.com/productos/${id}.json`);
   }
 
   searchProduct ( toSearch: string) {

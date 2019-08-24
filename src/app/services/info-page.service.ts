@@ -34,7 +34,7 @@ export class InfoPageService {
   }
 
   private loadTeam() {
-    this.http.get('https://angular-test-f06e8.firebaseio.com/team.json')
+    this.http.get('https://watashi.firebaseio.com/equipo/equipo.json')
     .subscribe( (response: any) => {
 
       console.log('response team', response);

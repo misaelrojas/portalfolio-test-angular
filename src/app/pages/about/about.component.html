@@ -3,11 +3,11 @@
         
         
         <div *ngFor="let member of infoPageService.team" class="animated pulse ae-grid__item item-lg-4 ae-kappa au-mb-3">
-          <img [src]="member.photo_url" alt="" class="au-mb-3">
-          <h5 class="ae-u-bolder au-mt-2">{{ member.name }} </h5>
-          <p class="ae-u-bolder au-mb-3"> {{ member.title }}</p>
-          <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{ member.info }}</p>
-          <a target="_blank" href="https://twitter.com/{{ member.twitter }}" class="ae-u-bolder au-underline"> @{{ member.twitter }} </a>
+          <img [src]="member.url" alt="" class="au-mb-3">
+          <h5 class="ae-u-bolder au-mt-2">{{ member.nombre }} </h5>
+          <p class="ae-u-bolder au-mb-3"> {{ member.subtitulo }}</p>
+          <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{ member.frase }}</p>
+          <a target="_blank" href="https://twitter.com/{{ member.twitter }}" class="ae-u-bolder au-underline"> {{ member.twitter }} </a>
         </div>
         
       </div>
